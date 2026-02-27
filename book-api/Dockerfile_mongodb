@@ -1,0 +1,11 @@
+# Utiliza una imagen más específica de MongoDB
+FROM mongo:4.4
+
+# Establece el directorio de trabajo
+WORKDIR /usr/src/app
+
+# Exponer el puerto de MongoDB
+EXPOSE 27017
+
+# Agrega un retardo antes de iniciar MongoDB
+CMD ["sh", "-c", "sleep 10 && mongod --bind_ip_all"]
